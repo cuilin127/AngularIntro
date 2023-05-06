@@ -10,11 +10,16 @@ export class PostListComponent implements AfterViewInit{
   @ViewChild(PostComponent) childComp: any;
 
   messageFromChild:string = '';
+  fromChildOutput:string = '';
   constructor(){
     console.log(this.childComp);
   }
   ngAfterViewInit(): void {
     console.log(this.childComp)
     this.messageFromChild = this.childComp.childMessage;
+  }
+  recieveMessage($event: string){
+    console.log($event);
+    this.fromChildOutput = $event;
   }
 }

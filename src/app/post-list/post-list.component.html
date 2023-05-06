@@ -1,3 +1,4 @@
 
-<app-post [fromParent]='parentMessage'></app-post>
+<app-post [fromParent]='parentMessage' (messageEvent)='recieveMessage($event)'></app-post>
 <p>{{messageFromChild}}</p>
+<p>{{fromChildOutput}}</p>
